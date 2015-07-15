@@ -1,0 +1,49 @@
+<%= form_for(@conference) do |f| %>
+  <% if @conference.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@conference.errors.count, "error") %> prohibited this conference from being saved:</h2>
+
+      <ul>
+      <% @conference.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :fiscal_year %>
+    <%= f.date_select :fiscal_year, discard_day: true, discard_month: true, start_year: Date.today.year - 10, end_year: Date.today.year + 20 %>
+  </div>
+  <div class="field">
+    <%= f.label :date %><br>
+    <%= f.datetime_select :date %>
+  </div>
+  <div class="field">
+    <%= f.label :locationname, "Location" %><br>
+    <%= f.text_field :locationname %>
+  </div>
+  <div class="field address">
+    <%= f.label :locationnumber, "Number" %><br>
+    <%= f.number_field :locationnumber %>
+  </div>
+  <div class="field address">
+    <%= f.label :locationstreet, "Street" %><br>
+    <%= f.text_field :locationstreet %>
+  </div>
+  <div class="field address">
+    <%= f.label :locationcity, "City" %><br>
+    <%= f.text_field :locationcity %>
+  </div>
+  <div class="field address">
+    <%= f.label :locationzip, "Zip Code" %><br>
+    <%= f.number_field :locationzip %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

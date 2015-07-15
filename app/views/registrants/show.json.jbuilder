@@ -1,0 +1,1 @@
+json.extract! @registrant, :id, :firstname, :lastname, :middleinitial, :homenumber, :homestreet, :homecity, :homestate, :homezip, :homephone, :cellphone, :businessname, :businessnumber, :businessstreet, :businesscity, :businessstate, :businesszip, :created_at, :updated_at

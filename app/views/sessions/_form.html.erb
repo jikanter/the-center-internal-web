@@ -1,0 +1,65 @@
+<%= form_for(@session) do |f| %>
+  <% if @session.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@session.errors.count, "error") %> prohibited this session from being saved:</h2>
+
+      <ul>
+      <% @session.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :presenterid %><br>
+    <%= f.number_field :presenterid %>
+  </div>
+  <div class="field">
+    <%= f.label :copresenter_id %><br>
+    <%= f.number_field :copresenter_id %>
+  </div>
+  <div class="field">
+    <%= f.label :conferenceid %><br>
+    <%= f.number_field :conferenceid %>
+  </div>
+  <div class="field">
+    <%= f.label :title %><br>
+    <%= f.text_field :title %>
+  </div>
+  <div class="field">
+    <%= f.label :description %><br>
+    <%= f.text_field :description %>
+  </div>
+  <div class="field">
+    <%= f.label :starttime %><br>
+    <%= f.datetime_select :starttime %>
+  </div>
+  <div class="field">
+    <%= f.label :endtime %><br>
+    <%= f.datetime_select :endtime %>
+  </div>
+  <div class="field">
+    <%= f.label :strand %><br>
+    <%= f.text_field :strand %>
+  </div>
+  <div class="field">
+    <%= f.label :roomid %><br>
+    <%= f.number_field :roomid %>
+  </div>
+  <div class="field">
+    <%= f.label :level %><br>
+    <%= f.number_field :level %>
+  </div>
+  <div class="field">
+    <%= f.label :setuporderid %><br>
+    <%= f.number_field :setuporderid %>
+  </div>
+  <div class="field">
+    <%= f.label :language %><br>
+    <%= f.text_field :language %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,29 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  presenterid: 1
+  copresenter_id: 1
+  conferenceid: 1
+  title: MyString
+  description: MyString
+  starttime: 2015-05-21 16:31:12
+  endtime: 2015-05-21 16:31:12
+  strand: MyString
+  roomid: 1
+  level: 1
+  setuporderid: 1
+  language: MyString
+
+two:
+  presenterid: 1
+  copresenter_id: 1
+  conferenceid: 1
+  title: MyString
+  description: MyString
+  starttime: 2015-05-21 16:31:12
+  endtime: 2015-05-21 16:31:12
+  strand: MyString
+  roomid: 1
+  level: 1
+  setuporderid: 1
+  language: MyString

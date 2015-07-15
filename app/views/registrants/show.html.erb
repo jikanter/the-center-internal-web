@@ -1,0 +1,84 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Firstname:</strong>
+  <%= @registrant.firstname %>
+</p>
+
+<p>
+  <strong>Lastname:</strong>
+  <%= @registrant.lastname %>
+</p>
+
+<p>
+  <strong>Middleinitial:</strong>
+  <%= @registrant.middleinitial %>
+</p>
+
+<p>
+  <strong>Homenumber:</strong>
+  <%= @registrant.homenumber %>
+</p>
+
+<p>
+  <strong>Homestreet:</strong>
+  <%= @registrant.homestreet %>
+</p>
+
+<p>
+  <strong>Homecity:</strong>
+  <%= @registrant.homecity %>
+</p>
+
+<p>
+  <strong>Homestate:</strong>
+  <%= @registrant.homestate %>
+</p>
+
+<p>
+  <strong>Homezip:</strong>
+  <%= @registrant.homezip %>
+</p>
+
+<p>
+  <strong>Homephone:</strong>
+  <%= @registrant.homephone %>
+</p>
+
+<p>
+  <strong>Cellphone:</strong>
+  <%= @registrant.cellphone %>
+</p>
+
+<p>
+  <strong>Businessname:</strong>
+  <%= @registrant.businessname %>
+</p>
+
+<p>
+  <strong>Businessnumber:</strong>
+  <%= @registrant.businessnumber %>
+</p>
+
+<p>
+  <strong>Businessstreet:</strong>
+  <%= @registrant.businessstreet %>
+</p>
+
+<p>
+  <strong>Businesscity:</strong>
+  <%= @registrant.businesscity %>
+</p>
+
+<p>
+  <strong>Businessstate:</strong>
+  <%= @registrant.businessstate %>
+</p>
+
+<p>
+  <strong>Businesszip:</strong>
+  <%= @registrant.businesszip %>
+</p>
+
+<%= link_to 'Edit', edit_registrant_path(@registrant, conference_id: @registrant.conference_id) %> |
+<%= link_to 'Back', conference_registrants_path(@registrant.conference_id) %>

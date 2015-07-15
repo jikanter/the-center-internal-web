@@ -1,0 +1,4 @@
+<h1>Plan A Conference</h1>
+<% @conferences.each do |c| %>
+<div class="app fy-<%= c.fiscal_year.year %>"><a href="/conferences/<%= c.id %>/sessions"><%= c.name %></a></div>
+<% end %>

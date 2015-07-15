@@ -1,0 +1,58 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Registrations</h1>
+<h2><%= Conference.find(params[:conference_id]).name %></h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Firstname</th>
+      <th>Lastname</th>
+      <th>Middleinitial</th>
+      <th>Homenumber</th>
+      <th>Homestreet</th>
+      <th>Homecity</th>
+      <th>Homestate</th>
+      <!--th>Homezip</th>
+      <th>Homephone</th>
+      <th>Cellphone</th>
+      <th>Businessname</th>
+      <th>Businessnumber</th>
+      <th>Businessstreet</th>
+      <th>Businesscity</th>
+      <th>Businessstate</th>
+      <th>Businesszip</th-->
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @registrants.each do |registrant| %>
+      <tr>
+        <td><%= registrant.firstname %></td>
+        <td><%= registrant.lastname %></td>
+        <td><%= registrant.middleinitial %></td>
+        <td><%= registrant.homenumber %></td>
+        <td><%= registrant.homestreet %></td>
+        <td><%= registrant.homecity %></td>
+        <td><%= registrant.homestate %></td>
+        <!--td><%= registrant.homezip %></td>
+        <td><%= registrant.homephone %></td>
+        <td><%= registrant.cellphone %></td>
+        <td><%= registrant.businessname %></td>
+        <td><%= registrant.businessnumber %></td>
+        <td><%= registrant.businessstreet %></td>
+        <td><%= registrant.businesscity %></td>
+        <td><%= registrant.businessstate %></td>
+        <td><%= registrant.businesszip %></td-->
+        <td><%= link_to 'Show', registrant_path(registrant, conference_id: params[:conference_id]) %></td>
+        <td><%= link_to 'Edit', edit_registrant_path(registrant, conference_id: params[:conference_id]) %></td>
+        <td><%= link_to 'Destroy', registrant, method: :delete, conference_id: params[:conference_id], data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Registrant', new_conference_registrant_path %>

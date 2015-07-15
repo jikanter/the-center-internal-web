@@ -1,0 +1,64 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Presenterid:</strong>
+  <%= @session.presenterid %>
+</p>
+
+<p>
+  <strong>Copresenter:</strong>
+  <%= @session.copresenter_id %>
+</p>
+
+<p>
+  <strong>Conferenceid:</strong>
+  <%= @session.conferenceid %>
+</p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @session.title %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @session.description %>
+</p>
+
+<p>
+  <strong>Starttime:</strong>
+  <%= @session.starttime %>
+</p>
+
+<p>
+  <strong>Endtime:</strong>
+  <%= @session.endtime %>
+</p>
+
+<p>
+  <strong>Strand:</strong>
+  <%= @session.strand %>
+</p>
+
+<p>
+  <strong>Roomid:</strong>
+  <%= @session.roomid %>
+</p>
+
+<p>
+  <strong>Level:</strong>
+  <%= @session.level %>
+</p>
+
+<p>
+  <strong>Setuporderid:</strong>
+  <%= @session.setuporderid %>
+</p>
+
+<p>
+  <strong>Language:</strong>
+  <%= @session.language %>
+</p>
+
+<%= link_to 'Edit', edit_session_path(@session) %> |
+<%= link_to 'Back', sessions_path %>

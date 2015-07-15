@@ -1,0 +1,5 @@
+<% @registrants.each do |registrant| %>
+<p><% registrant.id %></p>
+<p><% registrant.firstname %></p>
+<p><% registrant.lastname %></p>
+<% link_to 'Show', registrant %>

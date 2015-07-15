@@ -1,0 +1,31 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  registrant_id: 1
+  conference_id: 1
+  po_id: 1
+  organization_id: 1
+  invoice_number: 1
+  date: 2015-04-28 13:09:47
+  service_provided: MyText
+  period_billed: 
+  lineitem_id: 1
+  accounting_code: 1
+  department_id: 1
+  accounts_payable_organization_id: 1
+  terms: 1
+
+two:
+  registrant_id: 1
+  conference_id: 1
+  po_id: 1
+  organization_id: 1
+  invoice_number: 1
+  date: 2015-04-28 13:09:47
+  service_provided: MyText
+  period_billed: 
+  lineitem_id: 1
+  accounting_code: 1
+  department_id: 1
+  accounts_payable_organization_id: 1
+  terms: 1

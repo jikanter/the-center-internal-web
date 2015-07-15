@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Welcome</title>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+  <style type="text/css">
+  /**
+   * Nicholas Gallagher Micro-Clearfix (http://nicolasgallagher.com/micro-clearfix-hack/)
+   */
+  .cf:before,
+  .cf:after {
+      content: " "; /* 1 */
+      display: table; /* 2 */
+  }
+
+  .cf:after {
+      clear: both;
+  }
+
+  /**
+   * For IE 6/7 only
+   * Include this rule to trigger hasLayout and contain floats.
+   */
+  .cf {
+      *zoom: 1;
+  }
+
+  body {
+    font-family: "Verdana";
+  }
+
+  h1 { 
+    text-align: center;
+    text-decoration: underline;
+    font: bold 3em/3em "Verdana", arial, sans-serif;
+  }
+
+  div { 
+    padding: 0.5em;
+  }
+
+  a { 
+    text-decoration: none;
+    color: rgb(172, 10, 10);
+    border: solid rgb(187,187,187) 1px;
+    padding: 0.6em;
+  }
+
+  .app { 
+    margin: 0.2em 0 0 0;
+    position: relative;
+    text-align: center;
+    height: 100px;
+  }
+
+  .nav { 
+    margin: 0 0.8em;
+    height: 200px;
+  }
+
+  div.app { 
+    margin: 0;
+    padding: 0.7em;
+  }
+
+  .app a { 
+    width: 100%;
+    height: 100px;
+    margin: 2.0em;
+    padding: 2.0em;
+  }
+
+  .app a:hover { 
+    background: rgb(187,187,187);
+    border: solid rgb(255,255,255) 1px;
+    color: rgb(255,255,255);
+  }
+  
+  </style>
+</head>
+<body>
+
+<%= yield %>
+
+</body>
+</html>

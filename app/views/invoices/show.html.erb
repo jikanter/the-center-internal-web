@@ -1,0 +1,69 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Registrant:</strong>
+  <%= @invoice.registrant_id %>
+</p>
+
+<p>
+  <strong>Conference:</strong>
+  <%= @invoice.conference_id %>
+</p>
+
+<p>
+  <strong>Po:</strong>
+  <%= @invoice.po_id %>
+</p>
+
+<p>
+  <strong>Organization:</strong>
+  <%= @invoice.organization_id %>
+</p>
+
+<p>
+  <strong>Invoice number:</strong>
+  <%= @invoice.invoice_number %>
+</p>
+
+<p>
+  <strong>Date:</strong>
+  <%= @invoice.date %>
+</p>
+
+<p>
+  <strong>Service provided:</strong>
+  <%= @invoice.service_provided %>
+</p>
+
+<p>
+  <strong>Period billed:</strong>
+  <%= @invoice.period_billed %>
+</p>
+
+<p>
+  <strong>Lineitem:</strong>
+  <%= @invoice.lineitem_id %>
+</p>
+
+<p>
+  <strong>Accounting code:</strong>
+  <%= @invoice.accounting_code %>
+</p>
+
+<p>
+  <strong>Department:</strong>
+  <%= @invoice.department_id %>
+</p>
+
+<p>
+  <strong>Accounts payable organization:</strong>
+  <%= @invoice.accounts_payable_organization_id %>
+</p>
+
+<p>
+  <strong>Terms:</strong>
+  <%= @invoice.terms %>
+</p>
+
+<%= link_to 'Edit', edit_invoice_path(@invoice) %> |
+<%= link_to 'Back', invoices_path %>

@@ -1,0 +1,86 @@
+<%= form_for(@registrant) do |f| %>
+  <% if @registrant.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@registrant.errors.count, "error") %> prohibited this registrant from being saved:</h2>
+
+      <ul>
+      <% @registrant.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  
+  
+  <div class="field">
+    <p>Conference: <%= Conference.find(params[:conference_id]).name %></p>
+    <%= f.hidden_field :conference_id, value: params[:conference_id] , readonly: true %>
+  </div>
+  <div class="field">
+    <%= f.label :firstname %><br>
+    <%= f.text_field :firstname %>
+  </div>
+  <div class="field">
+    <%= f.label :lastname %><br>
+    <%= f.text_field :lastname %>
+  </div>
+  <div class="field">
+    <%= f.label :middleinitial %><br>
+    <%= f.text_field :middleinitial %>
+  </div>
+  <div class="field">
+    <%= f.label :homenumber %><br>
+    <%= f.number_field :homenumber %>
+  </div>
+  <div class="field">
+    <%= f.label :homestreet %><br>
+    <%= f.text_field :homestreet %>
+  </div>
+  <div class="field">
+    <%= f.label :homecity %><br>
+    <%= f.text_field :homecity %>
+  </div>
+  <div class="field">
+    <%= f.label :homestate %><br>
+    <%= f.text_field :homestate %>
+  </div>
+  <div class="field">
+    <%= f.label :homezip %><br>
+    <%= f.number_field :homezip %>
+  </div>
+  <div class="field">
+    <%= f.label :homephone %><br>
+    <%= f.number_field :homephone %>
+  </div>
+  <div class="field">
+    <%= f.label :cellphone %><br>
+    <%= f.number_field :cellphone %>
+  </div>
+  <div class="field">
+    <%= f.label :businessname %><br>
+    <%= f.text_field :businessname %>
+  </div>
+  <div class="field">
+    <%= f.label :businessnumber %><br>
+    <%= f.number_field :businessnumber %>
+  </div>
+  <div class="field">
+    <%= f.label :businessstreet %><br>
+    <%= f.text_field :businessstreet %>
+  </div>
+  <div class="field">
+    <%= f.label :businesscity %><br>
+    <%= f.text_field :businesscity %>
+  </div>
+  <div class="field">
+    <%= f.label :businessstate %><br>
+    <%= f.text_field :businessstate %>
+  </div>
+  <div class="field">
+    <%= f.label :businesszip %><br>
+    <%= f.number_field :businesszip %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
