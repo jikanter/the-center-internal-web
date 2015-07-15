@@ -1,20 +1,25 @@
 == README
 
 
+Center Internal Dbs.
+
+Beginning with the registration app, and will expand from there.
+
+Everything here is written in Ruby (http://www.ruby-lang.org) and
+Ruby on Rails (http://rubyonrails.org)
+
+* make sure you bundle install before running, as that pulls
+the dependencies
+
+* Requires Ruby version 2.1 or greater. You can set up your own environment
+  on windows using Ruby Installer (http://rubyinstaller.org/), and on the
+  mac using Homebrew (http://brew.sh)
+
 * Running solr
-  - For development: 
+  - For development:
     bundle exec rake sunspot:solr:run # foreground (development)
   - For production:
     # bundle exec rake sunspot:solr:start # background
-
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
 
 * Configuration
 
@@ -29,7 +34,3 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
