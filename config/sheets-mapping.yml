@@ -1,0 +1,13 @@
+# See https://github.com/stationkeeping/drive_time for a description of this format
+spreadsheets:
+- title: NCLB-2016-RFP-Responses
+  worksheets:
+    - title: Proposals
+      key:
+        builder: join
+        from_fields: [firstname, lastname, title]
+      fields:
+        - name: firstname
+        - name: lastname
+        - name: title
+        - name: abstract

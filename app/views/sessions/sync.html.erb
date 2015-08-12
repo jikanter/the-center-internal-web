@@ -1,0 +1,22 @@
+<% if @proposals %>
+<h1>Proposals Added</h1>
+  <ul>
+  <%= @proposals.each do |proposal| %>
+  <li>
+    <div>FirstName : <%= proposal.firstname %></div>
+    <div>LastName : <%= proposal.lastname %></div>
+    <div>Title : <%= proposal.title %></div>
+    <div>Abstract : <%= proposal.abstract %></div>
+  </li>
+  <% end %>
+  </ul>
+<% end %>
+<div class="debug">
+<% if defined?(@auth) %>
+  <h1>Auth:</h1>
+  <% @auth.each do |key, value| %>
+    <h1><%= key %> </h1>
+    <p><%= value %> </p>
+  <% end %>
+<% end %>
+</div>

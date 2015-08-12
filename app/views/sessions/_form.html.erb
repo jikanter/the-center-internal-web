@@ -12,20 +12,20 @@
   <% end %>
 
   <div class="field">
+    <%= f.label "Session Title" %><br>
+    <%= f.text_field :title %>
+  </div>
+  <div class="field">
     <%= f.label :presenterid %><br>
     <%= f.number_field :presenterid %>
   </div>
-  <div class="field">
-    <%= f.label :copresenter_id %><br>
+  <div class="field hidden">
+    <%= f.label "Copresenter (If applicable)" %><br>
     <%= f.number_field :copresenter_id %>
   </div>
   <div class="field">
     <%= f.label :conferenceid %><br>
     <%= f.number_field :conferenceid %>
-  </div>
-  <div class="field">
-    <%= f.label :title %><br>
-    <%= f.text_field :title %>
   </div>
   <div class="field">
     <%= f.label :description %><br>

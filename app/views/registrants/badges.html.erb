@@ -1,0 +1,50 @@
+<p id="notice"><%= notice %></p>
+<h1>Badge Printing</h1>
+<h2>Please select the Individuals whose badge you want to print. To Print all, just hit Print Badges</h2>
+<h3>You can also print badges at any time by clicking Print Selected Badges next to any registration entry</h3>
+<form method="POST" action="/conferences/<%= params[:conference_id] %>/registrants/actions/badges.pdf">
+  <!-- add the rails token, for external apis,
+      check http://stackoverflow.com/questions/16258911/rails-4-authenticity-token for solution -->
+  <%= tag(:input, :type => "hidden", :name => request_forgery_protection_token.to_s, :value => form_authenticity_token) %>
+  <input type="submit" value="Print Selected Badges" />
+  <% @registrants.each do |registrant| %>
+    <div class="registrant">
+    <%= registrant.firstname %>
+    <%= registrant.lastname %>
+      <input name="badge[<%= registrant.id %>]" value="<%= registrant.id %>" type="checkbox" /><input type="submit" value="Print Selected Badges" />
+    </div>
+  <% end %>
+  <input type="submit" value="Print Selected Badges" />
+  <script type="text/javascript">
+    // don't do this, we don't need it.
+    // var TheCenter = (typeof TheCenter != "undefined") ? TheCenter : new Object();
+    // TheCenter.PrintBadges = function() {
+    //   // ^= -> startswith, see http://www.w3.org/TR/css3-selectors/
+    //   var selectedBadges = document.querySelectorAll("[name^='badge']:checked");
+    //   console.log(selectedBadges.length);
+    //   var sids = [];
+    //   for (var i = 0; i < selectedBadges.length; i++) {
+    //     sids.push(selectedBadges[i].value);
+    //   }
+    //   console.log(sids.length);
+    //   console.log(sids);
+    //   sids = JSON.stringify(sids);
+    //   var responseBadges = "";
+    //   // submit the data
+    //   var xhr = new XMLHttpRequest();
+    //   xhr.open('POST', '/conferences/<%= params[:conference_id] %>/registrants/actions/badges.pdf', true);
+    //   xhr.setRequestHeader('Content-Type', 'application/json; charset=UTF-8');
+    //   xhr.setRequestHeader('<%= request_forgery_protection_token.to_s %>', '<%= form_authenticity_token %>');
+    //   xhr.send(sids);
+    //
+    //   switch (xhr.status) {
+    //     case 200:
+    //       responseBadges = xhr.responseXML;
+    //       document.body.appendChild(responseBadges);
+    //       break;
+    //     default:
+    //       console.log("Response Bad");
+    //   }
+    // };
+  </script>
+</form>

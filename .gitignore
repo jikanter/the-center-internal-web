@@ -31,6 +31,9 @@ config/initializers/secret_token.rb
 config/secrets.yml
 config/client_secrets.json
 
+# ignore cache directory
+/cache/
+
 ## Environment normalisation:
 /.bundle
 /vendor/bundle

@@ -26,10 +26,11 @@
         <td><%= conference.locationnumber %></td>
         <td><%= conference.locationcity %></td>
         <td><%= conference.locationzip %></td>
-        <td><%= link_to 'Show', conference %></td>
-        <td><%= link_to 'Edit', edit_conference_path(conference) %></td>
+        <td><%= link_to 'Info', conference %></td>
+        <td><%= link_to 'Edit Info', edit_conference_path(conference) %></td>
         <td><%= link_to 'Registrations', conference_registrants_path(conference) %></td>
         <td><%= link_to 'Add Registrations', new_conference_registrant_path(conference) %></td>
+        <td><%= link_to 'Print Badges', "/conferences/" + conference.id.to_s + "/registrants/actions/badges" %></td>
         <td><%= link_to 'Schedule Sessions', conference_sessions_path(conference) %></td>
         <td><%= link_to 'Destroy', conference, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>

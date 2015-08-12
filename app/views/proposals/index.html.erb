@@ -1,0 +1,52 @@
+<p id="notice"><%= notice %></p>
+
+
+<h1><%= Conference.find(params[:conference_id]).name %></h1>
+<h2>Conference Planner</h2>
+
+
+<table>
+  <thead>
+    <tr>
+      <th>Presenterid</th>
+      <th>Copresenter</th>
+      <th>Conferenceid</th>
+      <th>Title</th>
+      <th>Description</th>
+      <th>Starttime</th>
+      <th>Endtime</th>
+      <th>Strand</th>
+      <th>Roomid</th>
+      <th>Level</th>
+      <th>Setuporderid</th>
+      <th>Language</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @sessions.each do |session| %>
+      <tr>
+        <td><%= session.presenterid %></td>
+        <td><%= session.copresenter_id %></td>
+        <td><%= session.conferenceid %></td>
+        <td><%= session.title %></td>
+        <td><%= session.description %></td>
+        <td><%= session.starttime %></td>
+        <td><%= session.endtime %></td>
+        <td><%= session.strand %></td>
+        <td><%= session.roomid %></td>
+        <td><%= session.level %></td>
+        <td><%= session.setuporderid %></td>
+        <td><%= session.language %></td>
+        <td><%= link_to 'Show', session %></td>
+        <td><%= link_to 'Edit', edit_session_path(session) %></td>
+        <td><%= link_to 'Destroy', session, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Session', new_session_path %>

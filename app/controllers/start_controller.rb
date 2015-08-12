@@ -2,12 +2,14 @@ class StartController < ApplicationController
   # The purpose of this controller is to initialize the ui, then pass to the next controller
   # as need be. Mixin the login and password for a given request if necessary
   def home
+    # for CORS compliance
+    response.headers['Access-Control-Allow-Origin'] = '*'
     respond_to do |format|
        # index.html.erb
       format.html { render "index.html.erb", layout: "start" }
     end
   end
-  
+
   def plan
     @conferences = Conference.all
     respond_to do |format|
@@ -15,5 +17,5 @@ class StartController < ApplicationController
       format.html { render "plan.html.erb", layout: "start" }
     end
   end
-  
+
 end

@@ -13,15 +13,14 @@
 
   <div class="field">
     <%= f.label :name %><br>
-    <%= f.text_field :name %>
+    <%= f.text_field :name, size: 75 %>
   </div>
   <div class="field">
     <%= f.label :fiscal_year %>
     <%= f.date_select :fiscal_year, discard_day: true, discard_month: true, start_year: Date.today.year - 10, end_year: Date.today.year + 20 %>
   </div>
   <div class="field">
-    <%= f.label :date %><br>
-    <%= f.datetime_select :date %>
+    <%= f.label :date %> <%= f.datetime_select :date %>
   </div>
   <div class="field">
     <%= f.label :locationname, "Location" %><br>

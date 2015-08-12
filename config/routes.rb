@@ -1,28 +1,38 @@
 Rails.application.routes.draw do
-  
-  
-  
+
+
+
+  use_doorkeeper
   resources :conferences do
-    
-    
-    resources :registrants do 
+
+
+    resources :registrants do
       resources :organizations
       resources :invoices
+
       #get 'actions/search' => 'registrants#search'
     end
-    
+
     resources :sessions
+    resources :proposals
   end
-  
+
   resources :registrants
   resources :organizations
   resources :invoices
   resources :sessions
-  
-  get '/home', :controller => "start", :action => "home"
-  get '/planner', :controller => "start", :action => "plan"
-  
 
+  get '/conferences/:conference_id/registrants/actions/badges', :controller => 'registrants', :action => 'badges'
+  post '/conferences/:conference_id/registrants/actions/badges', :controller => 'registrants', :action => 'badges'
+  get '/home', :controller => 'start', :action => 'home'
+  get '/planner', :controller => 'start', :action => 'plan'
+
+  # oauth2 for google sync
+
+  #get "/auth/:provider/callback" => "googlesync#download_and_load"
+  get '/auth/:provider/callback', :controller => 'googlesync', :action => 'init_api'
+  get '/drivesync', :controller => 'googlesync', :action => 'init_api'
+  root to: 'start#index'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

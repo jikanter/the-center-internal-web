@@ -4,7 +4,23 @@ source 'https://rubygems.org'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.0'
 # Use mysql as the database for Active Record
-gem 'mysql2'
+gem 'mysql2', '0.3.18'
+# Google Drive based models. Doesn't work because it does client based auth
+# We need to use oauth2, so this doesn't work
+gem 'drive_time'
+gem 'google-api-client'
+# authenticating rails with google
+gem 'omniauth'
+gem 'omniauth-google-oauth2'
+
+# more oauth tests
+gem 'doorkeeper'
+gem 'signet-rails'
+
+# HTTP request middleware
+gem 'faraday'
+gem 'faraday_middleware'
+
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
@@ -36,12 +52,14 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'sunspot_rails'
 gem 'sunspot_solr'
 # Reporting
+# excel
 gem 'axlsx'
-
+# pdf
+gem 'prawn'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-  gem 'byebug'
+  gem 'byebug', '4.0.5'
 
   # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'web-console', '~> 2.0'
@@ -49,4 +67,3 @@ group :development, :test do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring', '>= 1.3.6'
 end
-

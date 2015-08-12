@@ -7,32 +7,16 @@
 
 <p>
   <strong>Date:</strong>
-  <%= @conference.date %>
+  <%# pretty print the date #%>
+  <%= Date::MONTHNAMES[@conference.date.month] %> <%= @conference.date.day %>, <%= @conference.date.year %>
 </p>
 
 <p>
-  <strong>Locationname:</strong>
-  <%= @conference.locationname %>
-</p>
-
-<p>
-  <strong>Locationstreet:</strong>
-  <%= @conference.locationstreet %>
-</p>
-
-<p>
-  <strong>Locationnumber:</strong>
-  <%= @conference.locationnumber %>
-</p>
-
-<p>
-  <strong>Locationcity:</strong>
-  <%= @conference.locationcity %>
-</p>
-
-<p>
-  <strong>Locationzip:</strong>
-  <%= @conference.locationzip %>
+  <strong>Location:</strong>
+  <div><%= @conference.locationname %>
+       <div><%= @conference.locationnumber %>, <%= @conference.locationstreet %></div>
+       <div><%= @conference.locationcity %> IL, <%= @conference.locationzip %></div>
+  </div>
 </p>
 
 <%= link_to 'Edit', edit_conference_path(@conference) %> |

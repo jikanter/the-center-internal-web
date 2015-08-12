@@ -1,7 +1,7 @@
 class ConferencesController < ApplicationController
   before_action :set_conference, only: [:show, :edit, :update, :destroy]
 
-  # GET /conferences
+  # GET /conferencese
   # GET /conferences.json
   def index
     @conferences = Conference.all
