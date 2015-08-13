@@ -1,6 +1,5 @@
 == README
 
-
 Center Internal Dbs.
 
 Beginning with the registration app, and will expand from there.
@@ -15,22 +14,32 @@ the dependencies
   on windows using Ruby Installer (http://rubyinstaller.org/), and on the
   mac using Homebrew (http://brew.sh)
 
+
+* Configuration
+
+  - Make sure you set the CLIENT_ID and CLIENT_SECRET environment variables
+    for outh2 authentication via google (see https://developers.google.com/identity/protocols/OAuth2?hl=en)
+
+
+* Database creation
+
+  - rake db:migrate
+
+* Database initialization
+
+* Testing
+
+  - rake test:all
+
+
+* Services (job queues, cache servers, search engines, etc.)
+
+* Deployment instructions
+
 * Running solr
   - For development:
     bundle exec rake sunspot:solr:run # foreground (development)
   - For production:
     # bundle exec rake sunspot:solr:start # background
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
 
 * ...
