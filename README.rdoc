@@ -5,9 +5,11 @@ Center Internal Dbs.
 Beginning with the registration app, and will expand from there.
 
 Everything here is written in Ruby (http://www.ruby-lang.org) and
-Ruby on Rails (http://rubyonrails.org)
+Ruby on Rails (http://rubyonrails.org) version 4
 
-* make sure you bundle install before running, as that pulls
+* I recommend rbenv for managing virtual ruby installations
+
+* make sure you run bundle install before running, as that pulls
 the dependencies
 
 * Requires Ruby version 2.1 or greater. You can set up your own environment
@@ -29,12 +31,9 @@ the dependencies
 
 * Testing
 
-  - rake test:all
-
+  - bundle exec rake test:all
 
 * Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
 
 * Running solr
   - For development:
@@ -42,4 +41,10 @@ the dependencies
   - For production:
     # bundle exec rake sunspot:solr:start # background
 
-* ...
+* Making changes to the application
+
+  - For Development
+    Fork using the fork button on github, or run the application internally on
+    The Center's web servers
+
+* Deployment instructions
