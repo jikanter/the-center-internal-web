@@ -10,8 +10,8 @@
       </ul>
     </div>
   <% end %>
-  
-  
+
+
   <div class="field">
     <p>Conference: <%= Conference.find(params[:conference_id]).name %></p>
     <%= f.hidden_field :conference_id, value: params[:conference_id] , readonly: true %>

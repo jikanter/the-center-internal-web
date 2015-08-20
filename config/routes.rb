@@ -17,17 +17,15 @@ Rails.application.routes.draw do
     resources :proposals
   end
 
+  resources :sessions
   resources :registrants
   resources :organizations
   resources :invoices
-  resources :sessions
 
   get '/conferences/:conference_id/registrants/actions/badges', :controller => 'registrants', :action => 'badges'
   post '/conferences/:conference_id/registrants/actions/badges', :controller => 'registrants', :action => 'badges'
   get '/home', :controller => 'start', :action => 'home'
   get '/planner', :controller => 'start', :action => 'plan'
-
-  # oauth2 for google sync
 
   #get "/auth/:provider/callback" => "googlesync#download_and_load"
   get '/auth/:provider/callback', :controller => 'googlesync', :action => 'init_api'

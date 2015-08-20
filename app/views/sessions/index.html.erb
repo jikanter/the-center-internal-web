@@ -1,20 +1,19 @@
-<p id="notice"><%= notice %></p>
-
+<!-- allow for both notice and params[:notice] until I figure out how to redirect
+  the DELETE method correctly -->
+<p id="notice"><%= notice %><%= params[:notice] if params[:notice] %></p>
 
 <h1><%= Conference.find(params[:conference_id]).name %></h1>
 <h2>Conference Planner</h2>
-
 
 <table>
   <thead>
     <tr>
       <th>Presenterid</th>
-      <th>Copresenter</th>
-      <th>Conferenceid</th>
       <th>Title</th>
       <th>Description</th>
       <th>Starttime</th>
       <th>Endtime</th>
+      <th>Copresenter</th>
       <th>Strand</th>
       <th>Roomid</th>
       <th>Level</th>
@@ -28,20 +27,19 @@
     <% @sessions.each do |session| %>
       <tr>
         <td><%= session.presenterid %></td>
-        <td><%= session.copresenter_id %></td>
-        <td><%= session.conferenceid %></td>
         <td><%= session.title %></td>
         <td><%= session.description %></td>
         <td><%= session.starttime %></td>
         <td><%= session.endtime %></td>
+        <td><%= session.copresenter_id %></td>
         <td><%= session.strand %></td>
         <td><%= session.roomid %></td>
         <td><%= session.level %></td>
         <td><%= session.setuporderid %></td>
         <td><%= session.language %></td>
         <td><%= link_to 'Show', session %></td>
-        <td><%= link_to 'Edit', edit_session_path(session) %></td>
-        <td><%= link_to 'Destroy', session, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Edit', edit_conference_session_path(session, conference_id: params[:conference_id]) %></td>
+        <td><%= link_to 'Remove', session_path(session, conference_id: params[:conference_id], method: :delete, data: { confirm: 'Are you sure?' }) %></td>
       </tr>
     <% end %>
   </tbody>
@@ -49,4 +47,4 @@
 
 <br>
 
-<%= link_to 'New Session', new_session_path %>
+<%= link_to 'New Session', new_conference_session_path %>

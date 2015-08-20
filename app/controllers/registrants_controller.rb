@@ -57,7 +57,7 @@ class RegistrantsController < ApplicationController
   def destroy
     @registrant.destroy
     respond_to do |format|
-      format.html { redirect_to registrants_url, notice: 'Registrant was successfully destroyed.' }
+      format.html { redirect_to(:controller => :registrants, :action => :index, conference_id: params[:conference_id], notice: 'Registrant was successfully unregistered.') }
       format.json { head :no_content }
     end
   end
@@ -92,13 +92,10 @@ class RegistrantsController < ApplicationController
       end
     end
   end
-  
+
 
   private
 
-    def set_conference
-      @conference = Conference.find(params[:conference_id])
-    end
     # Use callbacks to share common setup or constraints between actions.
     def set_registrant
       @registrant = Registrant.find(params[:id])
@@ -108,4 +105,5 @@ class RegistrantsController < ApplicationController
     def registrant_params
       params.require(:registrant).permit(:firstname, :lastname, :middleinitial, :homenumber, :homestreet, :homecity, :homestate, :homezip, :homephone, :cellphone, :businessname, :businessnumber, :businessstreet, :businesscity, :businessstate, :businesszip, :conference_id, :print_badge)
     end
+
 end

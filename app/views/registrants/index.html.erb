@@ -1,4 +1,7 @@
-<p id="notice"><%= notice %></p>
+<!-- allow for both notice and params[:notice] until I figure out how to redirect
+  the DELETE method correctly -->
+<p id="notice"><%= notice %><%= params[:notice] if params[:notice] %></p>
+
 
 <h1>Registrations</h1>
 <h2><%= Conference.find(params[:conference_id]).name %></h2>
@@ -47,7 +50,7 @@
         <td><%= registrant.businesszip %></td-->
         <td><%= link_to 'Show', registrant_path(registrant, conference_id: params[:conference_id]) %></td>
         <td><%= link_to 'Edit', edit_registrant_path(registrant, conference_id: params[:conference_id]) %></td>
-        <td><%= link_to 'Destroy', registrant, method: :delete, conference_id: params[:conference_id], data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Destroy', registrant_path(registrant, conference_id: params[:conference_id], method: :delete, data: { confirm: 'Are you sure?' }) %></td>
       </tr>
     <% end %>
   </tbody>

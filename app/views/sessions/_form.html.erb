@@ -12,6 +12,10 @@
   <% end %>
 
   <div class="field">
+    <p>Conference: <%= Conference.find(params[:conference_id]).name %></p>
+    <%= f.hidden_field :conferenceid, value: params[:conference_id], readonly: true %>
+  </div>
+  <div class="field">
     <%= f.label "Session Title" %><br>
     <%= f.text_field :title %>
   </div>
@@ -19,13 +23,9 @@
     <%= f.label :presenterid %><br>
     <%= f.number_field :presenterid %>
   </div>
-  <div class="field hidden">
+  <div class="field">
     <%= f.label "Copresenter (If applicable)" %><br>
     <%= f.number_field :copresenter_id %>
-  </div>
-  <div class="field">
-    <%= f.label :conferenceid %><br>
-    <%= f.number_field :conferenceid %>
   </div>
   <div class="field">
     <%= f.label :description %><br>

@@ -46,5 +46,7 @@ the dependencies
   - For Development
     Fork using the fork button on github, or run the application internally on
     The Center's web servers
+  - Make sure you set both environment variables CLIENT_ID and CLIENT_SECRET to
+    the necessary google data
 
 * Deployment instructions

@@ -60,5 +60,5 @@
   <%= @session.language %>
 </p>
 
-<%= link_to 'Edit', edit_session_path(@session) %> |
-<%= link_to 'Back', sessions_path %>
+<%= link_to 'Edit', edit_session_path(@session, conference_id: @session.conferenceid) %> |
+<%= link_to 'Back', conference_sessions_path(@session.conferenceid) %>

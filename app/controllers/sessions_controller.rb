@@ -5,7 +5,7 @@ class SessionsController < ApplicationController
   # GET /sessions
   # GET /sessions.json
   def index
-    @sessions = Session.all
+    @sessions = Session.where(conferenceid: params[:conference_id]).all
   end
 
   # GET /sessions/1
@@ -57,7 +57,7 @@ class SessionsController < ApplicationController
   def destroy
     @session.destroy
     respond_to do |format|
-      format.html { redirect_to sessions_url, notice: 'Session was successfully destroyed.' }
+      format.html { redirect_to(:controller => :sessions, :action => :index, conferenceid: params[:conferenceid], notice: 'Session was successfully removed.') }
       format.json { head :no_content }
     end
   end
